@@ -13,40 +13,32 @@ imginfo=[{"name":"1"},{"name":"2"},{"name":"3"},{"name":"4"},
          {"name":"11"},{"name":"12"},{"name":"13"},{"name":"14"}]
 imgdata=[{"name":"1"},{"name":"2"},{"name":"3"},{"name":"4"},
          {"name":"11"},{"name":"12"},{"name":"13"},{"name":"14"}]
-cfall=numpy.zeros(8) ##SWITCH OUT LATER
+cfall=numpy.zeros(8)
 
 ##SHOW THE INSTRUCTION IMAGE
-instrfile="E:/CAMH/vismod/VMphotos/scripts/textimgs/PupilLocationInstr.jpg"
+instrfile="C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/scripts/textimgs/PupilLocationInstr.jpg"
 instr=cv2.imread(instrfile)
-cv2.imshow('image', instr)
+cv2.imshow('Instructions', instr)
 cv2.waitKey(0)
+cv2.destroyAllWindows()
 
-#cfall=numpy.zeros(4) #this is for when testing w just 4 images
 # function to display the coordinates of the points clicked on the image  
 def click_event(event, x, y, flags, params): 
     global ix,iy
     # checking for left mouse clicks 
     if event == cv2.EVENT_LBUTTONDOWN: 
-  
         # displaying the coordinates on the Shell 
         print(x, ' ', y) 
         ix,iy=x,y
         # displaying the coordinates on the image window 
         radius=30
         cv2.circle(img, (x,y), radius, (255,0,0), 2)
-        #font = cv2.FONT_HERSHEY_SIMPLEX 
-        #cv2.putText(img, str(x) + ',' +
-        #            str(y), (x,y), font, 
-        #            1, (255, 0, 0), 2)
-        cv2.imshow('image', img)
+        cv2.imshow('image', img) 
   
-
-    
+   
 for n in range(0,len(imginfo)):
+    filebase="C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/bgremoved/"
 
-    filebase="E:/CAMH/vismod/VMphotos/improc/bgremoved/"
-
-    #ext=".jpg"
     ext=".png"
     file=filebase + imginfo[n]["name"] + ext
     imginfo[n]["file"]=file
@@ -56,14 +48,14 @@ for n in range(0,len(imginfo)):
     l = img.shape[0]
     w = img.shape[1]
     imgdata[n]["use"]=img
+    
+    
     cv2.namedWindow('image', cv2.WINDOW_NORMAL)
-    # displaying the image
     cv2.imshow('image', img)
-  
     # setting mouse handler for the image and calling the click_event() function 
     print('set left eye location')
     cv2.setMouseCallback('image', click_event) 
-
+ 
     # wait for a key to be pressed to exit 
     key=cv2.waitKey(0)
     print(key)
@@ -80,10 +72,8 @@ for n in range(0,len(imginfo)):
     cv2.destroyAllWindows() 
         
     #RERUN SAME IMAGE FOR OTHER EYE
-    #img = cv2.imread(file) 
-    #img=imgdata[n]["use"]
 
-    #cv2.namedWindow('image', cv2.WINDOW_NORMAL)  
+    cv2.namedWindow('image', cv2.WINDOW_NORMAL)  
     # displaying the image 
     cv2.imshow('image', img)
     # setting mouse hadler for the image 
@@ -96,11 +86,9 @@ for n in range(0,len(imginfo)):
     key=cv2.waitKey(0)
     print(key)
     if key == ord('a'):
-    #if key == 2:
         imginfo[n]["lx"]=ix
         imginfo[n]["ly"]=iy
     elif key == ord('d'):
-    #elif key == 3:
         imginfo[n]["rx"]=ix
         imginfo[n]["ry"]=iy
     imginfo[n]["xdist"]=abs(imginfo[n]["rx"]-imginfo[n]["lx"])
@@ -111,9 +99,7 @@ for n in range(0,len(imginfo)):
     # # close the window 
     cv2.destroyAllWindows() 
 
-print(imginfo)    
-#if __name__=="__main__": 
-#    main()
+print(imginfo)
 
 #########################################################################
 ## PART 2 - CALCULATE THE DISTANCES BETWEEN EYES IN THE VARIOUS IMAGES & DO IMAGE MANIPULATIONS BASED ON IT##
@@ -207,7 +193,7 @@ for n in range(0,len(imginfo)):
     
     #print(imginfo[n]["xdist"],imginfo[n]["ydist"],imginfo[n]["xavg"],imginfo[n]["yavg"])
 ##SHOW THE TEXT IMG
-txtfile="C:/Users/feusn/Desktop/VMphotos/scripts/textimgs/ShowingCropAligned.jpg"
+txtfile="C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/scripts/textimgs/ShowingCropAligned.jpg"
 txtimg=cv2.imread(txtfile)
 cv2.imshow('image', txtimg)
 cv2.waitKey(0)
@@ -220,7 +206,7 @@ for n in range(0,len(imginfo)):
     cv2.imshow('image2', imgdata[n]["resized"])
     cv2.waitKey(0)
     
-    filebase="C:/Users/feusn/Desktop/VMphotos/improc/aligned/"
+    filebase="C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/aligned/"
     ext=".jpg"
     file=filebase + imginfo[n]["name"] + ext
     print("saving image",imginfo[n]["name"],"as",file)
