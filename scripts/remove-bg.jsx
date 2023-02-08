@@ -10,9 +10,9 @@ How to use the script: https://youtu.be/6ICVsi2pWyk
 Configure following paramers before running the script
 --------------------------------------------------------------------------------------*/
 //Place all images needs to be processed in a folder. Add the path below.
-var sourceFolder = Folder("C:/Users/feusn/Desktop/VMphotos/improc/orig");
+var sourceFolder = Folder("C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/orig");
 //Add the path of an existing folder below to save the output.
-var saveFolder = new Folder("C:/Users/feusn/Desktop/VMphotos/improc/bgremoved");
+var saveFolder = new Folder("C:/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/bgremoved");
 //Fill color of the background
 var colorRef = new SolidColor;
 colorRef.rgb.red = 0;
@@ -31,7 +31,7 @@ var isTransparent = false;
     	//var fileList = sourceFolder.getFiles();
 	//Comment the above line and uncomment the following line to filter specific file types.
 	//Try filter files types if the script fails.
-	var fileList = sourceFolder.getFiles(/\.(jpg|png|tif|psd|crw|cr2|nef|dcr|dc2|raw|heic)$/i);
+	var fileList = sourceFolder.getFiles(/\.(jpg|png|tif|psd|crw|cr2|nef|dcr|dc2|raw|heic|jpeg)$/i);
   }
   else{
 	  alert("No images found on source folder");

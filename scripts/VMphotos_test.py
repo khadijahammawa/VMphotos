@@ -19,9 +19,11 @@ class PhotoshopTest:
         psApp.Quit()
 
 class TestCropAlign(unittest.TestCase): 
-    # This test will
-    #
-    #
+    # This test case uses the unittest module to test the two main functions of cropalign.py: 
+    # calculate_pupil_offset and crop_and_align. The TestCropAlign class inherits from unittest.
+    # TestCase and contains two tests: test_calculate_pupil_offset and test_crop_and_align. 
+    # Each test asserts that the expected output is equal to the actual output, using the assertEqual method. 
+    # The test will fail if the actual output does not match the expected output.
     def test_calculate_pupil_offset(self):
         # Test data
         imginfo = [{"name": "1", "lx": 10, "ly": 20, "rx": 30, "ry": 40},

@@ -133,9 +133,9 @@ def adjustbrightness_orig(im_file):
 def main():
     #file_path = input("Enter path to folder with images to process: ")
     #save_path = input("Enter path to folder to save output images")
-    file_path="/Users/feusn/Desktop/VMphotos/improc/aligned/"
-    save_path="/Users/feusn/Desktop/VMphotos/improc/matchbright/"
-    res_path="/Users/feusn/Desktop/VMphotos/improc/natural/"
+    file_path="/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/aligned/"
+    save_path="/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/matchbright/"
+    res_path="/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/natural/"
     print('Adjusting Brightness of Images.')
     for f in listdir(file_path):
         if isfile(join(file_path, f)) and f.endswith(('.png', '.jpg', '.JPG')):

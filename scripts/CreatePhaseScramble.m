@@ -5,7 +5,7 @@
 % Clear workspace 
 clc
 clear 
-cd('/Users/feusn/Desktop/VMphotos/improc/natural/')
+cd('/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/natural/')
 files(1).in='1.jpg'; files(1).out='5.jpg';
 files(2).in='2.jpg'; files(2).out='6.jpg';
 files(3).in='3.jpg'; files(3).out='7.jpg';
@@ -58,4 +58,4 @@ for i=1:8
     % Display the scrambled image
     imshow(ImScrambled)
 end
-cd('/Users/feusn/Desktop/VMphotos/scripts/')
+cd('/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/scripts/')

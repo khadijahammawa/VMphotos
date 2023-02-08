@@ -186,7 +186,7 @@ for n in range(0,len(imginfo)):
     #cv2.waitKey(0)
     #cv2.imshow('image2', cropped)
     #cv2.waitKey(0)    
-    resized=cv2.resize(cropped,(1000,1000), interpolation = cv2.INTER_CUBIC)
+    resized=cv2.resize(cropped,(1000,1000), interpolation = cv2.INTER_AREA)
     imgdata[n]["cropped"]=cropped
     imgdata[n]["resized"]=resized
 

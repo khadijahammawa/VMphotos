@@ -36,9 +36,9 @@ imgdata=[{"name":"1"},{"name":"2"},{"name":"3"},{"name":"4"},{"name":"5"},{"name
 
 for n in range(0,len(imginfo)):
 #setting up file path
-    crosshair='/Users/feusn/Desktop/VMphotos/improc/crosshair.png'
-    inputdir="/Users/feusn/Desktop/VMphotos/improc/natural/"
-    outputdir="/Users/feusn/Desktop/VMphotos/improc/VM/"
+    crosshair='/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/crosshair.png'
+    inputdir="/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/natural/"
+    outputdir="/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/VM/"
     ext=".jpg"
     infile=inputdir + imginfo[n]["name"] + ext
     imginfo[n]["infile"]=infile

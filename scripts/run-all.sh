@@ -2,21 +2,21 @@
 #THIS SCRIPT RUNS ALL THE IMAGE PROCESSING SCRIPTS FOR VISMOD R01
 #clear out the folders with things from prior subjects
 
-cd /c/Users/feusn/Desktop/VMphotos/scripts
+cd /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/scripts
 echo "Present working directory"
 echo pwd
 
-rm /c/Users/feusn/Desktop/VMphotos/improc/aligned/*
-rm /c/Users/feusn/Desktop/VMphotos/improc/bgremoved/*
-rm /c/Users/feusn/Desktop/VMphotos/improc/matchbright/*
-mkdir /c/Users/feusn/Desktop/VMphotos/improc/matchbright/tmp
-rm /c/Users/feusn/Desktop/VMphotos/improc/natural/*
-rm /c/Users/feusn/Desktop/VMphotos/improc/VM/*
-rm /c/Users/feusn/Desktop/VMphotos/improc/orig/*
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/aligned/*
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/bgremoved/*
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/matchbright/*
+mkdir /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/matchbright/tmp
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/natural/*
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/VM/*
+rm /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/orig/*
 echo "enter subject ID"
 read subid
-cp /c/Users/feusn/Desktop/VMphotos/$subid/original/* /c/Users/feusn/Desktop/VMphotos/improc/orig
-ls /c/Users/feusn/Desktop/VMphotos/improc/*/*
+cp /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/$subid/original/* /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/orig
+ls /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/*/*
 
 #first script makes photoshop & the remove-bg.jsx script run via terminal
 python runPS.py
@@ -39,7 +39,7 @@ echo 'natural images created'
 python crosshairs.py
 echo 'VM images created'
 
-cp -r /c/Users/feusn/Desktop/VMphotos/improc/VM /c/Users/feusn/Desktop/VMphotos/$subid/
-cp -r /c/Users/feusn/Desktop/VMphotos/improc/natural /c/Users/feusn/Desktop/VMphotos/$subid/
+cp -r /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/VM /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/$subid/
+cp -r /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/improc/natural /c/Users/Khadija_Hammawa/Documents/GitHub/VMphotos/$subid/
 
 echo "stimuli creation complete"
